@@ -1,0 +1,78 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+gimyeongjin-ui-MacBookPro.local
+Darwin 19.4.0 x86_64
+$> date
+2021년 1월 16일 토요일 09시 29분 38초 KST
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/c++/4.2.1
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+$> cp /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c
+cp: /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.c: No such file or directory
+$> cp /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.h /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.h
+cp: /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.h: No such file or directory
+$> cp /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line_utils.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c
+cp: /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line_utils.c: No such file or directory
+
+get_next_line.c ===================================================
+$> norminette /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.c | grep -E '(Error|Warning)'
+
+norminette : command not found
+
+
+get_next_line.h ===================================================
+$> norminette /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line.h | grep -E '(Error|Warning)'
+
+norminette : command not found
+
+
+get_next_line_utils.c ===================================================
+$> norminette /Users/mki/Documents/get_next_line/gipkim_get_next_line/get_next_line_utils.c | grep -E '(Error|Warning)'
+
+norminette : command not found
+
+
+BUFFER_SIZE=-1 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=-1 -o BUFF_-1
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=0 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=0 -o BUFF_0
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=1 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=1 -o BUFF_1
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=16 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=16 -o BUFF_16
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=32 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=32 -o BUFF_32
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=48 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=48 -o BUFF_48
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
+BUFFER_SIZE=9999 ===================================================
+$> gcc -Wall -Werror -Wextra tests/main.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c /Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c -D BUFFER_SIZE=9999 -o BUFF_9999
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line.c'
+clang: error: no such file or directory: '/Users/mki/Documents/get_next_line/tester/gnl-war-machine-v2019/get_next_line_utils.c'Compil. Failed
+
